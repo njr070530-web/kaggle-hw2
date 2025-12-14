@@ -1,0 +1,15 @@
+# 忽略数据集文件夹
+data/
+video_frames*/
+
+# 忽略训练出来的模型权重 (太大，不要传)
+*.pth
+*.tar
+
+# 忽略 Kaggle 下载的压缩包
+*.zip
+
+# 忽略 Python 编译垃圾和系统文件
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
