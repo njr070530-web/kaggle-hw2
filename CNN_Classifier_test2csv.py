@@ -148,7 +148,7 @@ test_loader = DataLoader(test_dataset, batch_size=32, shuffle=False)
 print("🚀 正在加载模型...")
 # 必须和训练时参数一致
 net = get_pretrained_model(num_classes=num_classes, freeze_backbone=True) 
-net.load_state_dict(torch.load('model_last.pth', map_location=device))
+net.load_state_dict(torch.load('model_best.pth', map_location=device))
 net.to(device)
 net.eval()
 
