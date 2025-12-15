@@ -26,11 +26,12 @@ class Net(nn.Module):
         x = self.fc2(x)
         return x
 def get_pretrained_model(num_classes, freeze_backbone=True):
-    model=models.resnet18(weights=models.ResNet18_Weights.DEFAULT)
+    # model=models.resnet18(weights=models.ResNet18_Weights.DEFAULT)
+    model = models.resnet50(weights=models.ResNet50_Weights.DEFAULT)
     if freeze_backbone:
         for param in model.parameters():
             param.requires_grad=False
     num_ftrs=model.fc.in_features
-    model.fc=nn.Linear(num_ftrs,num_classes)
+    model.fc=nn.Linear(2048,num_classes)
     return model
 
